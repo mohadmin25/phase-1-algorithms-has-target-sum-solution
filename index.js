@@ -1,5 +1,17 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // an empty object
+  const seeNumber = {}
+  // iterate thro each number in the array
+  for (let i= 0; i<array.length; i++){
+    // for current number identify a number that add to the target (number = target - array)
+    const number = target - array[i]
+    // checking if any key on our object is the number
+    if (seeNumber[number])
+    return true
+    // or add that number to the object(i)
+    seeNumber[array[i]] = true
+  }
+  return false
 }
 
 /* 
@@ -32,3 +44,5 @@ if (require.main === module) {
 }
 
 module.exports = hasTargetSum;
+
+
